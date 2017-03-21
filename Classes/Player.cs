@@ -14,7 +14,7 @@ namespace DiceShooter
 
         // player move
 
-        public Player(string pName, double pMoney = 200, int pScore = 0)
+        public Player(string pName, double pMoney = 200000, int pScore = 0)
         {
             playerName = pName;
             playerScore = pScore;

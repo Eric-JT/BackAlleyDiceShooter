@@ -4,9 +4,29 @@ namespace DiceShooter
 {
     class Program
     {
+        public static Boolean endGame = false;
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            GameManager.showTitleScreen();
+
+            GameManager.startGame();
+
+
+            while (!endGame) {
+                if (GameManager.checkLose()){
+                    GameHost.playerLost();
+                    endGame = true;
+                    break;
+                }
+                else if (GameManager.checkWin()){
+                    GameHost.playerWins();
+                    endGame = true;
+                    break;
+                } else{
+                    Console.Write("Enter your command: ");
+                    GameCommands.checkCommands(Console.ReadLine());
+                }
+            }
         }
     }
 }
