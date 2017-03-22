@@ -15,11 +15,13 @@ namespace DiceShooter
             while (!endGame) {
                 if (GameManager.checkLose()){
                     GameHost.playerLost();
+                    GameManager.showEndScreen();
                     endGame = true;
                     break;
                 }
                 else if (GameManager.checkWin()){
                     GameHost.playerWins();
+                    GameManager.showEndScreen();
                     endGame = true;
                     break;
                 } else{
