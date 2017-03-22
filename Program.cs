@@ -23,7 +23,7 @@ namespace DiceShooter
                     endGame = true;
                     break;
                 } else{
-                    Console.Write("Enter your command: ");
+                    Console.Write("\nEnter your command: ");
                     GameCommands.checkCommands(Console.ReadLine());
                 }
             }

@@ -13,6 +13,7 @@ namespace DiceShooter
         public static string playerName;
 
         // player move
+        
 
         public Player(string pName, double pMoney = 200, int pScore = 0)
         {
