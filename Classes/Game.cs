@@ -9,7 +9,7 @@ namespace DiceShooter
         static Random randomInt = new Random();
 
         // store tripple or doubles
-        // used to tell which tripple or which double is being bet on
+        // used to tell which tripple value or which double value is being bet on
         private static int t;
         private static int d;
 

@@ -68,6 +68,7 @@ namespace DiceShooter{
             Console.Write("Enter bet ammount: ");
         }
 
+/*
         public static double getBetAmount(double betAmount) {
             // Pass in input from the user
             // returns a double
@@ -96,7 +97,7 @@ namespace DiceShooter{
             Console.Clear();
             Console.WriteLine("CONAN: Your bet is {0}", betAmount);
             return betAmount;
-        }
+        }*/
 
       
     }

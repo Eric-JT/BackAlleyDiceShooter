@@ -28,6 +28,7 @@ namespace DiceShooter
                     endGame = true;
                     break;
                 } else{ // continue the game
+                    Console.WriteLine("CONAN: If you need help, just ask ");
                     Console.Write("\nEnter your command: ");
                     GameCommands.checkCommands(Console.ReadLine()); // get the command from the user
 
@@ -38,10 +39,12 @@ namespace DiceShooter
                             if (Player.getMove() == bet)
                             {
                                 GameHost.askForBet();
-                                //Player.setBet(GameHost.getBetAmount(double.Parse(Console.ReadLine())));
-                                Player.setBet(GameHost.getBetAmount(GameManager.checkIfNumber(Console.ReadLine())));
+                                
+                                Player.setBet(GameManager.getBetAmount(Console.ReadLine()));
                                 switch (Player.getMove()) {
                                     case "big":
+                                        Console.WriteLine(Player.getBet());
+                                        Console.ReadKey();
                                         Game.bigBet();
                                         break;
                                    case "small":
