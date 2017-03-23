@@ -43,8 +43,6 @@ namespace DiceShooter
                                 Player.setBet(GameManager.getBetAmount(Console.ReadLine()));
                                 switch (Player.getMove()) {
                                     case "big":
-                                        Console.WriteLine(Player.getBet());
-                                        Console.ReadKey();
                                         Game.bigBet();
                                         break;
                                    case "small":
