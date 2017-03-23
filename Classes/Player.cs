@@ -1,70 +1,37 @@
-/* Information about the player is stored */
-using System;
 
 namespace DiceShooter
 {
     class Player
     {
-        // Player score
-        public static int playerScore;
         
         // player money
-        public static double playerMoney;
+        private static double playerMoney;
         
         // player name
-        public static string playerName;
+        private static string playerName;
 
         // player bet amount
-        public static double betAmount;
+        private static double betAmount;
 
         // player move
-        public static string move = "";
+        private static string move = "";
 
-        public static string[] betList = {
-            "help",
-            "quit",
-            "big",
-            "small",
-            "odd",
-            "even",
-            "all 1s",
-            "all 2s",
-            "all 3s",
-            "all 4s",
-            "all 5s",
-            "all 6s",
-            "double 1s",
-            "double 2s",
-            "double 3s",
-            "double 4s",
-            "double 5s",
-            "double 6s",
-            "any triples",
-            "4 or 17",
-            "5 or 16",
-            "6 or 15",
-            "7 or 14",
-            "8 or 13",
-            "9 or 12",
-            "10 or 11"
-            };
 
-        public Player(string pName, double pMoney = 200, int pScore = 0)
+        public Player(string pName, double pMoney = 200)
         {
             playerName = pName;
-            playerScore = pScore;
             playerMoney = pMoney;
         }
 
-        /* Get Methods */
+        /* Getter Methods */
         public static string getName()
         {
             return playerName;
         }
 
-        public static int getScore()
+        public static double getBet()
         {
-            return playerScore;
+            return betAmount;
         }
 
         public static double getMoney()
@@ -72,14 +39,33 @@ namespace DiceShooter
             return playerMoney;
         }
 
-        public static double getBet(){
-            return betAmount;
-        }
-
-        public static string getMove(){
+        public static string getMove()
+        {
             return move;
         }
- 
+
+
+        /* Setter Methods */
+        public static void setMoneyAdd(double betAmount) {
+            playerMoney += betAmount;
+        }
+
+        public static void setMoneySub(double betAmount)
+        {
+            playerMoney -= betAmount;
+        }
+        
+
+        public static void setBet(double bet)
+        {
+            betAmount = bet;
+        }
+
+        public static void setMove(string m)
+        {
+            move = m;
+        }
+
     }  
 }
 
