@@ -7,16 +7,14 @@ namespace DiceShooter{
 
     class GameHost{
 
-        // store host name
-        public string hostName = "Conan";
         
-        
-        // ask player questions
         
         public static string askPlayerName()
         {
             /* Get the players name */
-            Console.WriteLine("CONAN: Hey buddy, what is your name:");
+            Console.WriteLine("CONAN: Hey buddy, what is your name?");
+            Thread.Sleep(2000);
+            Console.Clear();
             Console.Write("Enter your name: ");
             string pName = Console.ReadLine();
             return pName;
@@ -33,11 +31,11 @@ namespace DiceShooter{
             Console.Clear();
         }
 
-        // ask player questions about the game
+       
         
         public static void playerLost()
         {
-            // tell the player he lost
+            // tell the player he lost the game
             Console.WriteLine("CONAN: You are broke as a joke.");
             Thread.Sleep(2000);
             Console.Clear();
@@ -49,7 +47,7 @@ namespace DiceShooter{
 
         public static void playerWins()
         {
-            // tell the player he won
+            // tell the player he won the game
             Console.Clear();
             Console.WriteLine("CONAN: Whoa dude! You have too much money.");
             Thread.Sleep(2000);
@@ -61,7 +59,45 @@ namespace DiceShooter{
             Thread.Sleep(2000);
             Console.Clear();
         }
-        
-        // give the player help
+
+        public static void askForBet() {
+            // asks for the bet
+            Console.Write("CONAN: How much are you betting?");
+            Thread.Sleep(2000);
+            Console.Clear();
+            Console.Write("Enter bet ammount: ");
+        }
+
+        public static double getBetAmount(double betAmount) {
+            // Pass in input from the user
+            // returns a double
+            // check if bet is valid
+
+            // check if bet is valid
+            while (betAmount < 0 || betAmount > Player.getMoney()) {
+                // if bet is not valid inform the player and ask for bet again
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Invalid Bet!");
+                Console.ResetColor();
+                Thread.Sleep(2000);
+                Console.Clear();
+                Console.WriteLine("CONAN: Hey buddy, enter a valid bet.");
+                Thread.Sleep(2000);
+                Console.Clear();
+                Console.WriteLine(Player.getMoney());
+                Console.WriteLine("Bet: ");
+                Player.setBet(GameHost.getBetAmount(GameManager.checkIfNumber(Console.ReadLine())));
+            }
+
+            Console.Clear();
+            Console.WriteLine("CONAN: Thanks for your bet buddy");
+            Thread.Sleep(2000);
+            Console.Clear();
+            Console.WriteLine("CONAN: Your bet is {0}", betAmount);
+            return betAmount;
+        }
+
+      
     }
 }
