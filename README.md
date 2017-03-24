@@ -33,16 +33,10 @@ Three Dice Total
 
 ## This project uses the following tools
 
-[Gulp](http://gulpjs.com/)
-[Pug](https://github.com/pugjs/pug)
+[VSC](https://code.visualstudio.com/) - Could become my new favourite editor
+[DOTNET Core](https://www.microsoft.com/net/core#windowsvs2017) - I use Ubuntu OS this enabled me to develop c# software
 
 
-## System Preparation
-
-To use this project, you'll need the following things installed on your machine.
-
-1. [VSC](https://code.visualstudio.com/) - Could become my new favourite editor
-2. [DOTNET Core](https://www.microsoft.com/net/core#windowsvs2017) - I use Ubuntu OS this enabled me to develop c# software
 
 
 
