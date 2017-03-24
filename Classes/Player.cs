@@ -17,7 +17,7 @@ namespace DiceShooter
         private static string move = "";
 
 
-        public Player(string pName, double pMoney = 200)
+        public Player(string pName, double pMoney = 200000)
         {
             playerName = pName;
             playerMoney = pMoney;
@@ -46,6 +46,10 @@ namespace DiceShooter
 
 
         /* Setter Methods */
+        public static void resetMoney() {
+            playerMoney = 200;
+        }
+
         public static void setMoneyAdd(double betAmount) {
             playerMoney += betAmount;
         }
