@@ -73,6 +73,7 @@ namespace DiceShooter
 
             try {
 
+                // if the input fails to parse to a double jump down to catch
                 userInput = double.Parse(s);
 
                 // check if bet is valid
@@ -100,7 +101,7 @@ namespace DiceShooter
        
             }
             catch {
-                // If the Parse fails turn the string into an array of bytes
+                // If the Parse fails then turn the string into an array of bytes
                 // check bytes values to see if they are numbers or not
                 // Penalty the user
                 byte[] bytes = Encoding.ASCII.GetBytes(s);
@@ -124,6 +125,25 @@ namespace DiceShooter
             
             return userInput;
 
+        }
+
+
+        public static string continueGame() {
+            string continueGame = "";
+
+            while (continueGame != "y" || continueGame != "n") {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Would you like to conintue?");
+                Console.Write("enter \'y\' or \'n\' ");
+                Console.ResetColor();
+                continueGame = Console.ReadLine();
+                if (continueGame == "y" || continueGame == "n") {
+                    Player.resetMoney();
+                    break;
+                }
+            }
+
+            return continueGame;
         }
     }
 }
