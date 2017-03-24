@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace DiceShooter
 {
@@ -20,15 +20,36 @@ namespace DiceShooter
             while (!endGame) {
                 if (GameManager.checkLose()){ // check for a game lose
                     GameHost.playerLost();
-                    endGame = true;
-                    break;
+                    string continueGame = GameManager.continueGame();
+                    if (continueGame == "n")
+                    {
+                        endGame = true;
+                        break;
+                    }
+                    else {
+                        Console.WriteLine("CONAN: Ok lets play agian. Your balance has been reset to $200.");
+                        continue;
+                    }
+                    
                 }
                 else if (GameManager.checkWin()){ // check for a game win
                     GameHost.playerWins();
-                    endGame = true;
-                    break;
+                    string continueGame = GameManager.continueGame();
+                    if (continueGame == "n")
+                    {
+                        endGame = true;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("CONAN: Ok lets play agian. Your balance has been reset to $200.");
+                        continue;
+
+                    }
+                   
                 } else{ // continue the game
-                    Console.WriteLine("CONAN: If you need help, just ask ");
+                    Console.Write("CONAN");
+                    Console.WriteLine(": If you need help, just ask ");
                     Console.Write("\nEnter your command: ");
                     GameCommands.checkCommands(Console.ReadLine()); // get the command from the user
 
@@ -39,7 +60,6 @@ namespace DiceShooter
                             if (Player.getMove() == bet)
                             {
                                 GameHost.askForBet();
-                                
                                 Player.setBet(GameManager.getBetAmount(Console.ReadLine()));
                                 switch (Player.getMove()) {
                                     case "big":
