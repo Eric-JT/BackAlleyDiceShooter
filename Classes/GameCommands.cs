@@ -59,7 +59,8 @@ namespace DiceShooter
                         Console.Write(" {0} ", bet);
                         Console.ResetColor();
                         Console.Write("-");
-                    } 
+                    }
+                    Console.WriteLine("---------------------");
                     Console.ResetColor();
                     break;
                 case "big": // big bet
