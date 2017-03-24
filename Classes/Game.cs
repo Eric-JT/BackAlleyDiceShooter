@@ -10,8 +10,8 @@ namespace DiceShooter
 
         // store tripple or doubles
         // used to tell which tripple value or which double value is being bet on
-        private static int t;
-        private static int d;
+        private static int t; //tripple
+        private static int d; // double
 
         // Getter and Setters for t and d
         public static int getTripple() {
@@ -64,7 +64,7 @@ namespace DiceShooter
             }
             else {
                 Player.setMoneySub(Player.getBet());
-                Console.WriteLine("CONAN: Woah dude! you Lost the small bet! ahahahahaha");
+                Console.WriteLine("CONAN: Woah dude! you Lost the big bet! ahahahahaha");
                 Thread.Sleep(2000);
                 Console.Clear();
                 Console.WriteLine("Your money: {0}", Player.getMoney());
