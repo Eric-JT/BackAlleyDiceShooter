@@ -33,8 +33,8 @@ Three Dice Total
 
 ## This project uses the following tools
 
-[VSC](https://code.visualstudio.com/) - Could become my new favourite editor
-[DOTNET Core](https://www.microsoft.com/net/core#windowsvs2017) - I use Ubuntu OS this enabled me to develop c# software
+1. [VSC](https://code.visualstudio.com/) - Could become my new favourite editor
+2. [DOTNET Core](https://www.microsoft.com/net/core#windowsvs2017) - I use Ubuntu OS, this enabled me to develop c# software
 
 
 
